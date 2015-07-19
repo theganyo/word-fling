@@ -1,0 +1,33 @@
+{
+  "name": "word-fling",
+  "version": "1.0.0",
+  "description": "Simple example of a word-based game using Redis",
+  "main": "bin/word-fling",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theganyo/word-fling"
+  },
+  "keywords": [
+    "node",
+    "redis",
+    "word",
+    "game",
+    "dictionary"
+  ],
+  "author": "Scott Ganyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theganyo/word-fling/issues"
+  },
+  "homepage": "https://github.com/theganyo/word-fling",
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "commander": "^2.6.0",
+    "lodash": "^3.6.0",
+    "redis": "^0.12.1",
+    "should": "^5.2.0"
+  }
+}
