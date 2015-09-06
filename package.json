@@ -24,10 +24,14 @@
   },
   "homepage": "https://github.com/theganyo/word-fling",
   "dependencies": {
-    "bcryptjs": "^2.1.0",
-    "commander": "^2.6.0",
-    "lodash": "^3.6.0",
-    "redis": "^0.12.1",
-    "should": "^5.2.0"
+    "async": "^1.4.2",
+    "bcryptjs": "^2.2.1",
+    "commander": "^2.8.1",
+    "debug": "^2.2.0",
+    "lodash": "^3.10.1",
+    "redis": "^1.0.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.0"
   }
 }
