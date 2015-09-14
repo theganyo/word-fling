@@ -107,29 +107,11 @@ function print(func) {
 function watchGame(gameId, options) {
 
   var redis = options.test ? require('../test/redis') : require('../lib/redis');
-  redis.on('pmessage', function(pattern, channel, message) {
 
-    var msg = JSON.parse(message);
-    console.log('%s %s', channel, msg.event);
-
-    switch (msg.event) {
-
-      case 'new game':
-        console.log('  Players: %s', Object.keys(msg.playerScores).join(', '));
-        break;
-
-      case 'end turn':
-        console.log('  %s played word "%s" for a score of %s', msg.lastTurn.playerId, msg.lastTurn.word, msg.lastTurn.score);
-        console.log('  Scores: %j', msg.playerScores);
-        break;
-
-      case 'end game':
-        console.log('  Final score: %j', msg.playerScores);
-    }
-  });
-
-  redis.psubscribe('game:' + gameId);
-  console.log('watching game: %s', gameId);
+  // TODO: define an event handlers for pmessage events
+  // TODO: parse the message
+  // TODO: based on the msg.event, use console.log to print an appropriate friendly message
+  // TODO: subscribe to the passed-in game's event channel
 }
 
 function playGame() {
