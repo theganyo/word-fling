@@ -104,6 +104,26 @@ function print(func) {
   }
 }
 
+function formatMessage(msg) {
+    var msg = JSON.parse(message);
+    console.log('%s %s', channel, msg.event);
+
+    switch (msg.event) {
+
+      case 'new game':
+        console.log('  Players: %s', Object.keys(msg.playerScores).join(', '));
+        break;
+
+      case 'end turn':
+        console.log('  %s played word "%s" for a score of %s', msg.lastTurn.playerId, msg.lastTurn.word, msg.lastTurn.score);
+        console.log('  Scores: %j', msg.playerScores);
+        break;
+
+      case 'end game':
+        console.log('  Final score: %j', msg.playerScores);
+    }
+}
+
 function watchGame(gameId, options) {
 
   var redis = options.test ? require('../test/redis') : require('../lib/redis');
