@@ -104,7 +104,7 @@ function print(func) {
   }
 }
 
-function formatMessage(msg) {
+function formatMessage(message) {
     var msg = JSON.parse(message);
     console.log('%s %s', channel, msg.event);
 
